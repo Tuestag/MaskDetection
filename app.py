@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import streamlit as st
 import imutils
+from streamlit import caching
 
 from streamlit_webrtc import (
     AudioProcessorBase,
@@ -44,7 +45,7 @@ def app_object_detection():
           blob = cv2.dnn.blobFromImage(cv2.resize(img, (300, 300)), 1.0, (300, 300), (104.0, 177.0, 123.0))
           net.setInput(blob)
           detections = net.forward()
-
+          caching.clear_cache()
 
           for i in np.arange(0, detections.shape[2]):
             confidence = detections[0, 0, i, 2]
