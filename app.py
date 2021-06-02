@@ -1,3 +1,4 @@
+sudo apt-get install libglib2.0-0
 import cv2
 import numpy as np
 import streamlit as st
