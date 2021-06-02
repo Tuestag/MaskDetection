@@ -1,8 +1,7 @@
-sudo apt-get install libglib2.0-0
+!apt-get install libgtk2.0-dev
 import cv2
 import numpy as np
 import streamlit as st
-from google.colab.patches import cv2_imshow
 import imutils
 
 from streamlit_webrtc import (
