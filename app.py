@@ -1,4 +1,3 @@
-!apt-get install libgtk2.0-dev
 import cv2
 import numpy as np
 import streamlit as st
