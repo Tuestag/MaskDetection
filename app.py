@@ -21,12 +21,7 @@ net = cv2.dnn.readNetFromCaffe(PROTOTXT,Caffemodel)
 #Funciones
 
 
-###########################################################################################
-WEBRTC_CLIENT_SETTINGS = ClientSettings(
-    rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
-    media_stream_constraints={"video": True, "audio": False},
-)
-############################################################################################
+
 
 
 cnn = load_model(Maskmodel)
@@ -34,6 +29,12 @@ cnn = load_model(Maskmodel)
 @st.cache(allow_output_mutation=True, max_entries=10, ttl=3600)
 def app_object_detection():
 
+    ###########################################################################################
+    WEBRTC_CLIENT_SETTINGS = ClientSettings(
+    rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
+    media_stream_constraints={"video": True, "audio": False},
+    )
+    ############################################################################################
     class OverwritePrediction(VideoProcessorBase):
         
         def transform(self, frame):
