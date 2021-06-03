@@ -102,7 +102,6 @@ def app_object_detection():
           return img
 
 
-    caching.clear_cache()
 
     webrtc_ctx = webrtc_streamer(
         key="object-detection",
@@ -115,6 +114,7 @@ def app_object_detection():
   
 
   
+caching.clear_cache()
 
 
 #App
