@@ -37,7 +37,7 @@ def app_object_detection():
 
     class OverwritePrediction(VideoProcessorBase):
         
-        @st.cache(allow_output_mutation=True, max_entries=10, ttl=3600)
+        @st.cache(max_entries=10, ttl=3600)
         def transform(self, frame):
           img = frame.to_ndarray(format="bgr24")
 
