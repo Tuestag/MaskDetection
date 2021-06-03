@@ -31,7 +31,6 @@ WEBRTC_CLIENT_SETTINGS = ClientSettings(
 
 cnn = load_model(Maskmodel)
 
-@st.cache(allow_output_mutation=True, max_entries=10, ttl=3600, suppress_st_warning=True)
 def app_object_detection():
 
     class OverwritePrediction(VideoProcessorBase):
