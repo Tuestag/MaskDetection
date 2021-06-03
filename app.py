@@ -125,4 +125,3 @@ st.subheader(app_mode)
 if app_mode == object_detection_page:
         app_object_detection()
         @st.cache(max_entries=10, ttl=3600)
-
