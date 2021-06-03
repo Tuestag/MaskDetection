@@ -31,11 +31,12 @@ WEBRTC_CLIENT_SETTINGS = ClientSettings(
 
 cnn = load_model(Maskmodel)
 
-@st.cache(ttl=10*5,max_entries=20)
-def hit_news_api(country, n):
- st.write("Cache Miss for n:",n)
- return [random.randint(0,1000) for i in range(n)]
+#@st.cache(ttl=10*5,max_entries=20)
+#def hit_news_api(country, n):
+# st.write("Cache Miss for n:",n)
+# return [random.randint(0,1000) for i in range(n)]
 
+@st.cache(ttl=10*5,max_entries=20)
 def app_object_detection():
 
     class OverwritePrediction(VideoProcessorBase):
