@@ -36,7 +36,7 @@ cnn = load_model(Maskmodel)
 # st.write("Cache Miss for n:",n)
 # return [random.randint(0,1000) for i in range(n)]
 
-@st.cache(ttl=10*5,max_entries=2,suppress_st_warning = True)
+@st.cache(ttl=10*5,max_entries=2)
 def app_object_detection():
 
     class OverwritePrediction(VideoProcessorBase):
@@ -51,7 +51,6 @@ def app_object_detection():
           blob = cv2.dnn.blobFromImage(cv2.resize(img, (300, 300)), 1.0, (300, 300), (104.0, 177.0, 123.0))
           net.setInput(blob)
           detections = net.forward()
-          caching.clear_cache()
 
           for i in np.arange(0, detections.shape[2]):
             confidence = detections[0, 0, i, 2]
@@ -103,6 +102,7 @@ def app_object_detection():
           return img
 
 
+    caching.clear_cache()
 
     webrtc_ctx = webrtc_streamer(
         key="object-detection",
