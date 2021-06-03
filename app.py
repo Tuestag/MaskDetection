@@ -21,7 +21,7 @@ net = cv2.dnn.readNetFromCaffe(PROTOTXT,Caffemodel)
 #Funciones
 
 ###########################################################################################
-    WEBRTC_CLIENT_SETTINGS = ClientSettings(
+WEBRTC_CLIENT_SETTINGS = ClientSettings(
     rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
     media_stream_constraints={"video": True, "audio": False},
     )
