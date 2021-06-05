@@ -32,7 +32,7 @@ WEBRTC_CLIENT_SETTINGS = ClientSettings(
 
 cnn = load_model(Maskmodel)
 
-
+@st.cache(max_entries=10, ttl=3600)
 def app_object_detection():
 
     class OverwritePrediction(VideoProcessorBase):
@@ -103,7 +103,6 @@ def app_object_detection():
         async_processing=True,
     )
 
-@st.cache(max_entries=10, ttl=3600)
 
 #App
 
