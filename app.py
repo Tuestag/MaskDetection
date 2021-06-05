@@ -92,7 +92,7 @@ def app_object_detection():
                         color,
                         1,
                     )
-          return img
+        #  return img
           return av.VideoFrame.from_ndarray(img, format="bgr24")
 
 
