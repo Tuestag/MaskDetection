@@ -4,6 +4,7 @@ import streamlit as st
 import imutils
 from streamlit import caching
 import random
+import av
 
 from streamlit_webrtc import (
     AudioProcessorBase,
@@ -36,7 +37,7 @@ def app_object_detection():
 
     class OverwritePrediction(VideoProcessorBase):
         
-        def recv(self, frame):
+        def recv(self, frame: av.VideoFrame) -> av.VideoFrame:
           img = frame.to_ndarray(format="bgr24")
 
           img = imutils.resize(img, width=300)
