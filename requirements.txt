@@ -6,3 +6,4 @@ opencv-python==4.1.2.30
 black
 tensorflow==2.5.0
 Keras==2.4.3
+av==8.0.3
