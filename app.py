@@ -94,7 +94,6 @@ def app_object_detection():
                         color,
                         1,
                     )
-          return img
 
 
 
