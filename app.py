@@ -36,7 +36,7 @@ def app_object_detection():
 
     class OverwritePrediction(VideoProcessorBase):
         
-        def transform(self, frame):
+        def transform(frame):
           img = frame.to_ndarray(format="bgr24")
 
           img = imutils.resize(img, width=300)
