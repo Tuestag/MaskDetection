@@ -32,11 +32,11 @@ WEBRTC_CLIENT_SETTINGS = ClientSettings(
 
 cnn = load_model(Maskmodel)
 
-@st.cache
+
 def app_object_detection():
 
     class OverwritePrediction(VideoProcessorBase):
-        
+        @st.cache
         def transform(self, frame):
           img = frame.to_ndarray(format="bgr24")
 
