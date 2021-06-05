@@ -94,7 +94,7 @@ def app_object_detection():
                         color,
                         1,
                     )
-
+          return img
 
 
     webrtc_ctx = webrtc_streamer(
