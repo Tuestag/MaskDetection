@@ -15,9 +15,9 @@ from streamlit_webrtc import (
 from tensorflow.keras.models import load_model
 
 from setting import Caffemodel, PROTOTXT, Maskmodel
-#prototxt = 'deploy.prototxt'
-#model = 'res10_300x300_ssd_iter_140000.caffemodel'
+
 net = cv2.dnn.readNetFromCaffe(PROTOTXT,Caffemodel)
+
 #Funciones
 
 ###########################################################################################
@@ -66,8 +66,6 @@ def app_object_detection():
               data.append(resized)
               data = np.array(data)/255
               valor = cnn.predict_classes(data)
-              color =  (255,0,0)
-              text = "patricio"
               if valor == 0:
                 text = "Mal Puesta"
                 text = "Bad Mask"
