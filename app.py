@@ -106,7 +106,47 @@ def app_object_detection():
         async_processing=True,
     )
 
-  
+    ##################### PROBANDO ################
+@st.cache
+def get_phrase_data(start_date, end_date, phrases=None, at_time=None,
+                             **kwargs):
+    """Wrapper for :func:`load_metadata_for_period` for Streamlit caching
+    
+    start_date and end_date should be ISO format strings in UTC for date
+    
+    """
+    #print('get_phrase_data', phrases)
+    data = load_metadata_for_period(start_date, end_date, phrases=phrases,
+                    **kwargs)
+    return data
+
+import datetime
+def get_truncated_timestamp(end=None, refresh_interval=5, 
+                refresh_interval_units='minutes'):
+    """A time truncated down to resolution to control caching
+
+    Parameters:
+        end (datetime.datetime):  The time to validate against
+
+    Returns:
+        datetime.datetime: a timestamp set to the nearest refresh_interval.
+
+    If end is at or before midnight at the start of the
+    current day returns **None** as we'll never want to change that
+    cache anyway.
+
+    """
+    if end and end <= datetime.date.today():
+        #  Fix timestamp for data not updating...
+        timestamp = None
+    else:
+        timestamp = datetime.datetime.now()
+        if refresh_interval_units == 'minutes':
+            interval = int(refresh_interval)
+            timestamp = timestamp.replace(
+                            minute=(timestamp.minute // interval) * interval,
+                            second=0, microsecond=0, )
+    return timestamp
 
 
 #App
@@ -124,3 +164,5 @@ app_mode = object_detection_page
 st.subheader(app_mode)
 if app_mode == object_detection_page:
         app_object_detection()
+        data = get_phrase_data(start, end, phrases, get_truncated_timestamp(end),
+                              **kwargs)
