@@ -21,14 +21,10 @@ net = cv2.dnn.readNetFromCaffe(PROTOTXT,Caffemodel)
 
 #Funciones
 
-###########################################################################################
 WEBRTC_CLIENT_SETTINGS = ClientSettings(
     rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
     media_stream_constraints={"video": True, "audio": False},
     )
-############################################################################################
-
-
 
 
 cnn = load_model(Maskmodel)
@@ -51,14 +47,11 @@ def app_object_detection():
             confidence = detections[0, 0, i, 2]
 
             if confidence > 0.5:
-                    # extract the index of the class label from the `detections`,
-                    # then compute the (x, y)-coordinates of the bounding box for
-                    # the object
+                    
               box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
               (startX, startY, endX, endY) = box.astype("int")
 
 
-##############
               crop_img = img[startY:endY, startX:endX]
               data = []
               predecir = cv2.cvtColor(crop_img, cv2.COLOR_BGR2RGB)
@@ -67,20 +60,15 @@ def app_object_detection():
               data = np.array(data)/255
               valor = cnn.predict_classes(data)
               if valor == 0:
-                text = "Mal Puesta"
                 text = "Bad Mask"
                 color = (0, 186, 251)
               elif valor == 1:
-                text = 'Mascarilla'
                 text = 'With Mask'
                 color = (70, 152, 0)
               elif valor == 2:
-                text = 'Sin Mascarilla'
                 text = 'Without Mask'
                 color = (0,0,255)
-#############
-                    # display the prediction
-                   # label = text: {round(confidence * 100, 2)}%"
+
               cv2.rectangle(img, (startX, startY), (endX, endY), color, 2)
               y = startY - 15 if startY - 15 > 15 else startY + 15
               cv2.putText(
@@ -92,7 +80,6 @@ def app_object_detection():
                         color,
                         1,
                     )
-        #  return img
           return av.VideoFrame.from_ndarray(img, format="bgr24")
 
 
