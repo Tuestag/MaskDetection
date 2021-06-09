@@ -5,7 +5,6 @@ import imutils
 import av
 
 from streamlit_webrtc import (
-    AudioProcessorBase,
     ClientSettings,
     VideoProcessorBase,
     WebRtcMode,
