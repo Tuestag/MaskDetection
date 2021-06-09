@@ -51,8 +51,8 @@ def app_object_detection():
 
               crop_img = img[startY:endY, startX:endX]
               data = []
-              predecir = cv2.cvtColor(crop_img, cv2.COLOR_BGR2RGB)
-              resized = cv2.resize(predecir, (100, 100))
+              predict = cv2.cvtColor(crop_img, cv2.COLOR_BGR2RGB)
+              resized = cv2.resize(predict, (100, 100))
               data.append(resized)
               data = np.array(data)/255
               valor = cnn.predict_classes(data)
