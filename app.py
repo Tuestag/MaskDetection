@@ -105,6 +105,6 @@ app_mode = object_detection_page
 st.subheader(app_mode)
 if app_mode == object_detection_page:
         app_object_detection()
-        st.write("El funcionamiento implementado de cámara web está basado en https://github.com/whitphx/streamlit-webrtc")
+        st.write("El funcionamiento de la cámara web está basado en https://github.com/whitphx/streamlit-webrtc")
                
 
