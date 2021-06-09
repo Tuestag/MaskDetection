@@ -3,7 +3,6 @@ import numpy as np
 import streamlit as st
 import imutils
 from streamlit import caching
-import random
 import av
 
 from streamlit_webrtc import (
