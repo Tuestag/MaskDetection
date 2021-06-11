@@ -97,7 +97,7 @@ st.title('Sistema de Detección de Mascarillas Faciales basado en Redes Neuronal
 st.write("")
 st.write("Esta aplicación identifica en tiempo real si tiene o no mascarilla.")
 st.write("")
-st.write("Estimado usuario, para hacer uso de esta aplicación debe dar hacer click en START, luego debe permitir el acceso a la cámara de su dispositivo, hecho esto, espere a que conecte con el servidor de streamlit.")
+st.write("Estimado usuario, para hacer uso de esta aplicación debe dar hacer click en START,   luego debe permitir el acceso a la cámara de su dispositivo, hecho esto, espere a que conecte con el servidor de streamlit.")
 #st.write("Luego debe permitir el acceso a la cámara de su dispositivo")
 #st.write("Ahora espere a que conecte con el servidor de streamlit")
 object_detection_page = "Real Time Mask Detection"
