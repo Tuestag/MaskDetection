@@ -99,7 +99,7 @@ st.write("")
 #st.write("Esta aplicación identifica en tiempo real si tiene o no mascarilla.")
 st.write("This application identifying in real-time if people use correctly/incorrectly their masks")
 st.write("")
-st.write("Estimado usuario, para hacer uso de esta aplicación debe dar hacer click en START,   luego debe permitir el acceso a la cámara de su dispositivo, hecho esto, espere a que conecte con el servidor de streamlit.")
+#st.write("Estimado usuario, para hacer uso de esta aplicación debe dar hacer click en START,   luego debe permitir el acceso a la cámara de su dispositivo, hecho esto, espere a que conecte con el servidor de streamlit.")
 st.write("Dear user, to use this application you must click in START, after you should allow access to the camera of the device, and finally wait that the camera connect to streamlit server.")
 object_detection_page = "Real Time Mask Detection"
 
