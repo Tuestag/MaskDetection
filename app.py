@@ -94,7 +94,7 @@ def app_object_detection():
 
 #ASÍ QUEDA:
 #st.title('Face Mask Detection System Applying Convolutional Neural Networks')
-st.title('Sistema de Detección de Mascarillas Faciales basado en Redes Neuronales Convolucionales')
+st.title('Sistema de Detección de Mascarillas Faciales aplicando Redes Neuronales Convolucionales')
 st.write("")
 st.write("Esta aplicación identifica en tiempo real si tiene o no mascarilla.")
 #st.write("This application identifying in real-time if people use correctly/incorrectly their masks")
