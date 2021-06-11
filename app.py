@@ -93,13 +93,14 @@ def app_object_detection():
 #App
 
 #ASÍ QUEDA:
-st.title('Sistema de Detección de Mascarillas Faciales basado en Redes Neuronales Convolucionales')
+st.title('Face Mask Detection System Applying Convolutional Neural Networks')
+#st.title('Sistema de Detección de Mascarillas Faciales basado en Redes Neuronales Convolucionales')
 st.write("")
-st.write("Esta aplicación identifica en tiempo real si tiene o no mascarilla.")
+#st.write("Esta aplicación identifica en tiempo real si tiene o no mascarilla.")
+st.write("This application identifying in real-time if people use correctly/incorrectly their masks")
 st.write("")
 st.write("Estimado usuario, para hacer uso de esta aplicación debe dar hacer click en START,   luego debe permitir el acceso a la cámara de su dispositivo, hecho esto, espere a que conecte con el servidor de streamlit.")
-#st.write("Luego debe permitir el acceso a la cámara de su dispositivo")
-#st.write("Ahora espere a que conecte con el servidor de streamlit")
+st.write("Dear user, to use this application you must click in START, after you should allow access to the camera of the device, and finally wait that the camera connect to streamlit server.")
 object_detection_page = "Real Time Mask Detection"
 
 app_mode = object_detection_page
@@ -108,6 +109,6 @@ st.subheader(app_mode)
 if app_mode == object_detection_page:
         app_object_detection()
         st.write("")
-        st.write("El funcionamiento de la cámara web está basado en https://github.com/whitphx/streamlit-webrtc")
-               
+      #  st.write("El funcionamiento de la cámara web está basado en https://github.com/whitphx/streamlit-webrtc")
+        st.write("Camera operation is base on https://github.com/whitphx/streamlit-webrtc")       
 
