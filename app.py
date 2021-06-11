@@ -93,7 +93,7 @@ def app_object_detection():
 #App
 
 #ASÍ QUEDA:
-st.title(' Uso de algoritmos de Machine Learning para identificar el uso de mascarillas faciales')
+st.title(' Aplicación de redes neuronales convolucionles para identificar el uso de mascarillas faciales')
 st.write("")
 st.write("Esta aplicación identifica en tiempo real si tiene o no mascarilla.")
 st.write("")
