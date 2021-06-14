@@ -1,3 +1,3 @@
 Caffemodel = "res10_300x300_ssd_iter_140000.caffemodel"
 PROTOTXT = "deploy.prototxt"
-Maskmodel = "SACMaskNet.h5"
+SACMaskNet = "SACMaskNet.h5"
