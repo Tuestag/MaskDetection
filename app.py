@@ -12,7 +12,7 @@ from streamlit_webrtc import (
 )
 from tensorflow.keras.models import load_model
 
-from setting import Caffemodel, PROTOTXT, Maskmodel
+from setting import Caffemodel, PROTOTXT, SACMaskNet
 
 net = cv2.dnn.readNetFromCaffe(PROTOTXT,Caffemodel)
 
@@ -24,7 +24,7 @@ WEBRTC_CLIENT_SETTINGS = ClientSettings(
     )
 
 
-cnn = load_model(Maskmodel)
+cnn = load_model(SACMaskNet)
 
 def app_object_detection():
 
